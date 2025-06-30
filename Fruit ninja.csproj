@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RootNamespace>Fruit_ninja</RootNamespace>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\Images\**" />
+		<Resource Include="Resources\Images\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Fonts\RussoOne-Regular.ttf" />
+	  <None Remove="Resources\Sounds\game_music.mp3" />
+	  <None Remove="Resources\Sounds\menu_music.mp3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Resources\Fonts\RussoOne-Regular.ttf" />
+	  <Resource Include="Resources\Sounds\game_music.mp3">
+	    <CopyToOutputDirectory></CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Sounds\menu_music.mp3">
+	    <CopyToOutputDirectory></CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Settings.Designer.cs">
+			<DesignTimeSharedInput>True</DesignTimeSharedInput>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Settings.settings</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Properties\Settings.settings">
+			<Generator>SettingsSingleFileGenerator</Generator>
+			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
+		</None>
+	</ItemGroup>
+
+</Project>
